@@ -4,42 +4,134 @@
     <title>Telegraph Station</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
     <style>
            body{
                 background-color: black;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
                 color: white;
-                margin-left: 20%;
-                margin-right: 20%;
-                border: 2px dotted white;
-                padding: 10px 10px 10px 10px;
-                font-family: "Cas"
-                a {
-                   color: #4FC3F7;
-                   text-decoration: underline;
+                padding: 10px 5%;
+                font-family: "Cascadia Code", Consolas, monospace;
                 }
-                a:visited {
-                           color: #4FC3F7;
-                }
-                a:hover {
-                         color: #FFD54F;
-                }
+                      /* 中间主内容框 —— 就是你原来的样式 */
+           .main-content {
+               flex: 1 1 60px;
+               border: 2px dotted white;
+               padding: 10px;
            }
+
+           /* 左右两侧栏 */
+           .sidebar {
+               flex: 0 1 15%;
+               min-width: 120px;
+               border: 1px dashed #555;
+               padding: 10px;
+               font-size: 0.9em;
+               color: #ccc;
+           }
+           .sidebar h3 {
+               color: white;
+               font-size: 1em;
+               margin-top: 0;
+               border-bottom: 1px solid #555;
+               padding-bottom: 6px;
+           }
+           .sidebar ul {
+               list-style: none;
+               padding: 0;
+           }
+           .sidebar li {
+               margin-bottom: 10px;
+           }
+           .sidebar a {
+               color: #1500FF;
+               text-decoration: underline;
+           }
+           .sidebar a:visited {
+               color: #1500FF;
+           }
+           .sidebar a:hover {
+               color: #FFD54F;
+           }
+
+           a {
+               color: #1500FF;
+               text-decoration: underline;
+           }
+           a:visited {
+               color: #1500FF;
+           }
+           a:hover {
+               color: #FFD54F;
+           }
+
+           h1 {
+               font-size: 1.8em;
+           }
+           h2 {
+               font-size: 1.2em;
+               margin-top: 1.5em;
+           }
+
+                /* 窄屏（手机）时隐藏左右两侧栏，只留中间内容 */
+           @media (max-width: 900px) {
+               .sidebar {
+                   display: none;
+               }
+           }
+               a:visited {
+                           color: #1500FF;
+               }
+               a:hover {
+                         color: #FFD54F;
+               }
+
     </style>
-    <h1>Telegraph Station</h1>
-    <h2>Hugo Yu's website Selection</h2>
-    <h3>1.Chinese version</h3>
-    <p>This is my first website. It only uses keystroke duration detection and<br>
-       generates periods (.) and hyphens (-) as text.<a href="https://yu-guo-hugo.github.io/telegraph-station/">telegraph_station(Chinese)</a>
-    </p>
-    <h3>2.English version</h3>
-    <p>I translated it into English; it can translate Morse code and create rooms.<br>
-       Most importantly, this version allows online chat.<a href="https://yu-guo-hugo.github.io/telegraph-station2/">telegraph_station2(English)</a></p>
-    <h3>3.Chats</h3>
-    <p>I've improved the previous version, removing the Telegram feature and<br>
-       allowing direct text chat. I've also added a password function after room<br>
-       creation, so no one will find someone already logged in after entering the<br>
-       room number.<a href="https://yu-guo-hugo.github.io/Chat/">Chat</a></p>
+</head>
+<body>
+      <!-- 左侧栏：导航 -->
+    <aside class="sidebar">
+        <h3>Navigation</h3>
+        <ul>
+            <li><a href="#chinese">Chinese version</a></li>
+            <li><a href="#english">English version</a></li>
+            <li><a href="#chats">Chats</a></li>
+        </ul>
+        <h3>Links</h3>
+        <ul>
+            <li><a href="https://github.com/yu-guo-hugo" target="_blank" rel="noopener">My GitHub</a></li>
+        </ul>
+    </aside>
+     <!--中-->
+     <main class="main-content">
+        <h1>Telegraph Station</h1>
+        <h2>Hugo Yu's website Selection</h2>
+
+        <h3 id="chinese"><a href="https://yu-guo-hugo.github.io/telegraph-station/">1.Chinese version</a></h3>
+        <p>This is my first website. It only uses keystroke duration detection and<br>
+           generates periods (.) and hyphens (-) as text.
+        </p>
+
+        <h3 id="english"><a href="https://yu-guo-hugo.github.io/telegraph-station2/">2.English version</a></h3>
+        <p>I translated it into English; it can translate Morse code and create rooms.<br>
+           Most importantly, this version allows online chat.
+        </p>
+
+        <h3 id="chats"><a href="https://yu-guo-hugo.github.io/Chat/">3.Chats</a></h3>
+        <p>I've improved the previous version, removing the Telegram feature and<br>
+           allowing direct text chat. I've also added a password function after room<br>
+           creation, so no one will find someone already logged in after entering the<br>
+           room number.
+        </p>
+     </main>
+     <!-- 右侧栏：网站说明 -->
+    <aside class="sidebar">
+        <h3>About</h3>
+        <p>Retro telegraph, the tactile feel of typing on a keyboard.
+           Giving you the ultimate retro experience.</p>
+        <p style="text-align:center; color:#888;">electromagnetic waves</p>
+        <p>It has brought communication and convenience to the world.</p>
+    </aside>
 </body>
 </html>
